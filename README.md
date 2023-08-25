@@ -16,6 +16,7 @@ The Auto-Files extension for Visual Studio Code allows you to quickly create a n
 2. Select "new Component" from the context menu.
 3. Enter the desired filename in the input box.
 4. The new folder and files will be created inside the selected folder.
+   ![Usage video](https://media.cleanshot.cloud/media/33864/WMpJHNXpgu90MbiYgg1kARJVeLCdiCzEVyNp4EYb.gif?Expires=1693002660&Signature=PkjQGjZns2Y44OFGIOdfNO5bC9G7whHDAaXJzY4qlgRZlk-Z4rR7J64Pr6hUVT4Itp3C-IfzH2HCN7k3jSjZr2LlZKRvFZVqy5r7OZlfYPR1BWBLI3n1chSqJC8ZerTTzxv122Dmm8UMhx-QqhemX9dN5V~NO2Cii-AGk4WTlKt04l5Kkm-gGAz5UcQNHD4AMa7NkgVhzleCrCu7Ry0Ra3Qk2uR-0cWAjOXhk5Xz~WadIxkyjGp1ExJo06bx-6XuUc5D3j3VMooov6rfSIRxg08YujU2dIAvhCRaYuyT3f2cdZQqoA02DdmTqgAJbVi4VqArVhR~6QOKX5oOGR2WHA__&Key-Pair-Id=K269JMAT9ZF4GZ)
 
 ### Using the Command Palette
 
@@ -40,39 +41,40 @@ MyComponent/
 ### MyComponent.tsx
 
 ```tsx
-// Example content for MyComponent.tsx
 import React from "react";
+import "./MyComponent.scss";
 
 const MyComponent = () => {
-  return <div className="my-component">MyComponent works!</div>;
+  return <div className="my-component">MyComponent</div>;
 };
-
 export default MyComponent;
 ```
 
-```Example content for MyComponent.scss
-.my-component {
+### MyComponent.scss
 
+```scss
+.my-component {
 }
 ```
 
-```Example content for MyComponent.stories.tsx
+### MyComponent.stories.tsx
+
+```tsx
 import type { Meta, StoryObj } from "@storybook/react";
 import MyComponent from "./MyComponent";
 
 const meta = {
-title: "Blocks/MyComponent",
-component: MyComponent,
-parameters: {
-layout: "centered",
-},
+  title: "Blocks/MyComponent",
+  component: MyComponent,
+  parameters: {
+    layout: "centered",
+  },
 } satisfies Meta<typeof MyComponent>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Normal: Story = {};
-
 ```
 
 ## Installation
@@ -80,5 +82,7 @@ export const Normal: Story = {};
 You can install the Auto-Files extension from the Visual Studio Code Marketplace or download the `.vsix` file and install it manually.
 
 ## Support and Contributions
+
+If you encounter any issues or have suggestions for improvements, please [open an issue on GitHub](https://github.com/tiddi2/auto-files).
 
 Contributions are welcome! Feel free to submit a pull request.

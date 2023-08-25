@@ -54,7 +54,8 @@ async function createFilesInFolder(folderPath: string) {
 function generateTSX(folderPath: any, filename: string) {
   fs.writeFileSync(
     path.join(folderPath, `${filename}.tsx`),
-    `import "./${filename}.scss";
+    `import React from "react";
+import "./${filename}.scss";
 
 const ${filename} = () => {
   return (
