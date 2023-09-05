@@ -54,8 +54,7 @@ async function createFilesInFolder(folderPath: string) {
 function generateTSX(folderPath: any, filename: string) {
   fs.writeFileSync(
     path.join(folderPath, `${filename}.tsx`),
-    `import React from "react";
-import "./${filename}.scss";
+    `import "./${filename}.scss";
 
 const ${filename} = () => {
   return (
@@ -78,15 +77,14 @@ import ${filename} from "./${filename}";
 const meta = {
 title: "Blocks/${filename}",
 component: ${filename},
-parameters: {
-layout: "centered",
-},
 } satisfies Meta<typeof ${filename}>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Normal: Story = {};
+export const Normal: Story = {
+  args: {}
+};
 `
   );
 }
