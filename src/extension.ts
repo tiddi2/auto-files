@@ -55,8 +55,9 @@ function generateTSX(folderPath: any, filename: string) {
   fs.writeFileSync(
     path.join(folderPath, `${filename}.tsx`),
     `import "./${filename}.scss";
+import {${filename}Props } from "../../../Models/Generated/${filename}Props";
 
-const ${filename} = () => {
+const ${filename} = ({ props }: ${filename}Props) => {
   return (
     <div className="${toKebabCase(filename)}">
       ${filename}
@@ -73,6 +74,7 @@ function generateStory(folderPath: any, filename: string) {
     path.join(folderPath, `${filename}.stories.tsx`),
     `import type { Meta, StoryObj } from "@storybook/react";
 import ${filename} from "./${filename}";
+import { ${filename}Mockups } from "/Mockup.Components";
 
 const meta = {
 title: "Blocks/${filename}",
@@ -83,7 +85,7 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Normal: Story = {
-  args: {}
+  args: {${filename}Mockups}
 };
 `
   );

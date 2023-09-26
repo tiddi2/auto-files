@@ -4,11 +4,12 @@
   "author": {
     "name": "Tidemann Norli"
   },
+  "icon": "auto_files_icon.png",
   "repository": {
     "url": "https://github.com/tiddi2/auto-files"
   },
   "description": "Automatically create files needed for a new component",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "engines": {
     "vscode": "^1.81.0"
   },
