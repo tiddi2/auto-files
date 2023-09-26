@@ -85,7 +85,7 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Normal: Story = {
-  args: {${filename}Mockups}
+  args: { ${filename}Mockups }
 };
 `
   );
